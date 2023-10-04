@@ -90,7 +90,7 @@ def initialize_logs_file(logs_path = 'logs.json'):
         logs_file.write('[]')
         logs_file.close()
 
-def get_logs(logs_path = 'logs.json', ignore_emptry = True):
+def get_logs(logs_path = 'logs.json'):
     logs_file = open(logs_path)
     logs_string = logs_file.read()
     logs_file.close()
