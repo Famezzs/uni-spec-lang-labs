@@ -12,7 +12,7 @@ class Menu:
         if self.option_present(option) == True:
             self.options_and_functions[option]()
         else:
-            raise InvalidOption()
+            raise InvalidOption('Invalid option specified')
     
     def print_menu(self):
         print()

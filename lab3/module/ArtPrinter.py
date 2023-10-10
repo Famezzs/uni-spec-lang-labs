@@ -15,5 +15,5 @@ class ArtPrinter(Printer):
         try:
             print(colored(output_string, color))
         except:
-            raise InvalidColor()
+            raise InvalidColor('Invalid color provided')
         print()
