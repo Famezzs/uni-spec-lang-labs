@@ -2,8 +2,16 @@ from module.InputScanner import InputScanner
 from module.ArtGenerator import ArtGenerator
 from module.Menu import Menu
 from module.ArtPrinter import ArtPrinter
+import os
 
 class MenuFunctions:
+    @staticmethod
+    def save_to_file(content):
+        path = InputScanner.scan('Specify path to the file: ')
+        file = open(path, 'a')
+        file.write(content)
+        file.close()
+
     @staticmethod
     def text_to_art():
         text = InputScanner.scan('Text to transform: ')
@@ -12,10 +20,16 @@ class MenuFunctions:
 
         if InputScanner.input_empty(font) == True:
             font = ArtGenerator.default_font    
+
+        result = ArtGenerator.text_to_art(text=text, font=font)
         if InputScanner.input_empty(color) == True:
-            ArtPrinter.print(ArtGenerator.text_to_art(text=text, font=font))
+            ArtPrinter.print(result)
         else:
-            ArtPrinter.colored_print(ArtGenerator.text_to_art(text=text, font=font), color)
+            ArtPrinter.colored_print(result, color)
+        
+        option = InputScanner.scan('Save to file? (Y/N): ')
+        if option.startswith('y'):
+            MenuFunctions.save_to_file(result)
 
     @staticmethod
     def display_fonts():
