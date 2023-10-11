@@ -1,6 +1,5 @@
 from module.InputScanner import InputScanner
 from module.ArtGenerator import ArtGenerator
-from module.Menu import Menu
 from module.ArtPrinter import ArtPrinter
 
 class MenuFunctions:
