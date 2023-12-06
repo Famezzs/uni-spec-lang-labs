@@ -1,0 +1,11 @@
+class AnalysisConfiguration:
+    csv_file_name = 'sales_data.csv'
+    default_plot_title = 'Sales by Product ID'
+    default_x_plot_label = 'Product ID'
+    default_x_plot_property = 'Product_ID'
+    default_y_plot_label = 'Sales'
+    default_y_plot_property = 'Sales'
+    default_histogram_title = 'Distribution of Customer Ratings'
+    default_x_histogram_label = 'Rating'
+    default_y_histogram_label = 'Frequency'
+    default_histogram_property = 'Customer_Rating'
