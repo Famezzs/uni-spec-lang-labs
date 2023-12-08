@@ -11,3 +11,6 @@ class Configuration:
     art_generator_configuration = ArtGeneratorConfiguration
     api_configuration = APIConfiguration
     analysis_configuration = AnalysisConfiguration
+    from data.shared.classes.Logger import Logger
+    from datetime import datetime
+    logger = Logger(f"logs/application-logs-{datetime.now().date()}.log")

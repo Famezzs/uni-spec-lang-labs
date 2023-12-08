@@ -43,4 +43,3 @@ class MenuConfiguration:
     scanner = InputScanner(OutputPrinter)
 
     printer = OutputPrinter
-
