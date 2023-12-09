@@ -3,7 +3,38 @@ import json
 import uuid
 
 class Calculator:
-    def __init__(self, logs_path = 'logs.json'):
+    """
+    A class to implement basic calculator functionality including operations like addition, 
+    subtraction, multiplication, division, power, root, and modulo. It also handles logs 
+    of calculations.
+
+    Attributes:
+        logs_path (str): Path to the log file where the calculation logs are stored.
+        logs (list): A list of dictionaries containing calculation logs.
+
+    Methods:
+        __init__(self, logs_path='logs.json'): Initializes the calculator, setting up the logs file.
+        add(self, augend, addend): Performs addition and returns the result.
+        subtract(self, minuend, subtrahend): Performs subtraction and returns the result.
+        multiply(self, multiplier, multiplicand): Performs multiplication and returns the result.
+        divide(self, numerator, denominator): Performs division and returns the result, handles division by zero.
+        power(self, base, exponent): Returns the result of raising a number to a power.
+        root(self, radicand, degree): Returns the nth root of a number.
+        modulo(self, dividend, divisor): Returns the remainder of division.
+        get_operator(self, valid_operators={'+', '-', '*', '/'}): Prompts the user to select an operator.
+        get_operand(self): Prompts the user to enter a numeric value or use a value from logs.
+        get_operands(self, operator, operators_and_operand_names): Retrieves operands for a given operation.
+        perform_operation(self, operator, operands): Performs the selected operation with provided operands.
+        determine_continuation(self): Determines whether to continue with another calculation.
+        initialize_logs_file(self, logs_path='logs.json'): Initializes the logs file.
+        get_logs(self, logs_path='logs.json'): Retrieves logs from the specified path.
+        append_logs(self, operands, operator, result, logs): Appends a new entry to the logs.
+        save_logs_file(self): Saves the current logs to the log file.
+        perform_calculation(self): Main method to perform a calculation.
+        display_logs(self): Displays the calculation logs.
+        load_logs(self): Loads calculation logs from a specified file path.
+    """
+    def __init__(self, logs_path = 'logs/calculator_logs.json'):
         self.logs_path = logs_path
         self.initialize_logs_file(self.logs_path)
         self.logs = self.get_logs(self.logs_path)
@@ -21,7 +52,7 @@ class Calculator:
         if denominator != 0:
             return numerator / denominator
         else:
-            print('Division by zero is prohibited')
+            raise Exception('Division by zero is prohibited')
 
     def power(self, base, exponent):
         return pow(base, exponent)
@@ -158,21 +189,3 @@ class Calculator:
             print('Successfully retrieved the logs')
         else:
             print('Specified file does not exist')
-
-def main():
-    option = ''
-    calculator = Calculator()
-
-    while option != '0':
-        option = input('\nSelect one option:\n[1] - Perform calculation\n[2] - Display logs\n[3] - Load logs\n\n[0] - Exit\n')
-        match option:
-            case '1':
-                calculator.perform_calculation()
-            case '2':
-                calculator.display_logs()
-            case '3':
-                calculator.load_logs()
-            case '0':
-                calculator.save_logs_file() 
-
-main()

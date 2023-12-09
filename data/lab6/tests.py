@@ -1,7 +1,28 @@
 import unittest
-from module.Calculator import Calculator
+from data.shared.classes.Calculator import Calculator
 
 class CalculatorTests(unittest.TestCase):
+    """
+    A test suite for testing the Calculator class.
+
+    This class contains a series of unit tests that verify the functionality of the Calculator's methods,
+    ensuring correct results for addition, subtraction, multiplication, and division.
+
+    Methods:
+        test_positive_addition_result(): Tests that the addition of two positive numbers yields the correct result.
+        test_negative_addition_result(): Tests that the addition of a positive and a negative number yields the correct result.
+        test_positive_subtraction_result(): Tests that the subtraction of a negative number from a positive number yields the correct result.
+        test_negative_subtraction_result(): Tests that the subtraction of a positive number from a negative number yields the correct result.
+        test_both_negative_values_subtraction_result(): Tests that the subtraction of two negative numbers yields the correct result.
+        test_positive_multiplication_result(): Tests that the multiplication of two positive numbers yields the correct result.
+        test_negative_multiplication_result(): Tests that the multiplication of a positive and a negative number yields the correct result.
+        test_zero_multiplication_result(): Tests that the multiplication involving zero yields zero.
+        test_positive_division_result(): Tests that the division of two positive numbers yields the correct result.
+        test_negative_division_result(): Tests that the division where the denominator is negative yields the correct result.
+        test_numerator_is_zero_division_result(): Tests that division with a zero numerator yields zero.
+        test_denominator_is_zero_division_result(): Tests that division with a zero denominator raises an exception.
+    """
+
     calculator = Calculator()
 
     def test_positive_addition_result(self):

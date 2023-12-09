@@ -1,8 +1,36 @@
 class DataAnalyser:
+    """
+    A class for analyzing and visualizing data using plots and histograms.
+
+    This class provides methods for finding the minimum and maximum values in a dataset, 
+    plotting data, creating histograms, and exporting these visualizations as images.
+
+    Attributes:
+        dataset (DataFrame): A pandas DataFrame containing the dataset to be analyzed.
+
+    Methods:
+        find_min_max(): Finds the minimum and maximum values in the dataset.
+        plot(plot_parameters): Plots data based on provided parameters and optionally exports the plot as an image.
+        histogram(histogram_parameters): Creates a histogram based on provided parameters and optionally exports it as an image.
+        plot_and_histogram(plot_parameters, histogram_parameters): Simultaneously creates a plot and histogram based on provided parameters and displays them.
+    """
+
     def __init__(self, dataset):
+        """
+        Initializes the DataAnalyser with a dataset.
+
+        Args:
+            dataset (DataFrame): A pandas DataFrame containing the dataset to be analyzed.
+        """
         self.dataset = dataset
 
     def __export_plot(self, plot_parameters):
+        """
+        Generates and exports a plot based on the provided plot parameters.
+
+        Args:
+            plot_parameters (dict): A dictionary containing parameters for the plot.
+        """
         import matplotlib.pyplot as pyplot
         pyplot.plot(self.dataset[plot_parameters['x_plot_property']], self.dataset[plot_parameters['y_plot_property']])
         pyplot.title(plot_parameters['plot_title'])
@@ -12,6 +40,12 @@ class DataAnalyser:
         pyplot.close()
 
     def __export_histogram(self, histogram_parameters):
+        """
+        Generates and exports a histogram based on the provided histogram parameters.
+
+        Args:
+            histogram_parameters (dict): A dictionary containing parameters for the histogram.
+        """
         import matplotlib.pyplot as pyplot
         pyplot.hist(self.dataset[histogram_parameters['histogram_property']], bins=15)
         pyplot.title(histogram_parameters['histogram_title'])
@@ -21,9 +55,22 @@ class DataAnalyser:
         pyplot.close()
 
     def find_min_max(self):
+        """
+        Finds the minimum and maximum values for each column in the dataset.
+
+        Returns:
+            tuple: A tuple containing two pandas Series, one for the minimum and one for the maximum values.
+        """
         return [self.dataset.min(), self.dataset.max()]
     
     def plot(self, plot_parameters):
+        """
+        Generates a plot based on provided parameters and displays it. If an export file name is provided, 
+        the plot is also saved as an image.
+
+        Args:
+            plot_parameters (dict): A dictionary containing parameters for the plot.
+        """
         import matplotlib.pyplot as pyplot
         from data.shared.classes.InputScanner import InputScanner
         pyplot.plot(self.dataset[plot_parameters['x_plot_property']], self.dataset[plot_parameters['y_plot_property']])
@@ -37,6 +84,13 @@ class DataAnalyser:
             self.__export_plot(plot_parameters)
 
     def histogram(self, histogram_parameters):
+        """
+        Generates a histogram based on provided parameters and displays it. If an export file name is provided, 
+        the histogram is also saved as an image.
+
+        Args:
+            histogram_parameters (dict): A dictionary containing parameters for the histogram.
+        """
         import matplotlib.pyplot as pyplot
         from data.shared.classes.InputScanner import InputScanner
         pyplot.hist(self.dataset[histogram_parameters['histogram_property']], bins=15)
@@ -50,6 +104,13 @@ class DataAnalyser:
             self.__export_histogram(histogram_parameters)
     
     def plot_and_histogram(self, plot_parameters, histogram_parameters):
+        """
+        Simultaneously generates a plot and a histogram based on provided parameters and displays them.
+
+        Args:
+            plot_parameters (dict): A dictionary containing parameters for the plot.
+            histogram_parameters (dict): A dictionary containing parameters for the histogram.
+        """
         import matplotlib.pyplot as pyplot
         figure, axis = pyplot.subplots(2, 1, figsize=(10, 8))
         axis[0].plot(self.dataset[plot_parameters['x_plot_property']], self.dataset[plot_parameters['y_plot_property']])

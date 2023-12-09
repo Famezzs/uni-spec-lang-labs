@@ -1,7 +1,31 @@
-from data.lab6.module.Calculator import Calculator
+from data.shared.classes.Calculator import Calculator
 
-# Class which stores the functions called by the Menu class instance
 class MenuFunctions:
+    """
+    A class that stores the functions called by the Menu class instance.
+
+    This class provides static methods that are executed when specific menu options are selected. 
+    These methods include functionalities like ASCII art generation, data visualization, API data retrieval, 
+    and more.
+
+    Methods:
+        text_to_art_library(): Converts text to ASCII art using a library.
+        display_fonts(): Displays available fonts for ASCII art.
+        text_to_art_own(): Converts text to ASCII art using a custom implementation.
+        draw_figure(): Draws a geometric figure based on user input.
+        perform_calculation(): Performs a mathematical calculation.
+        display_calculator_logs(): Displays logs from the calculator.
+        load_calculator_logs(): Loads calculator logs.
+        generate_csv_file(): Generates a CSV file with sample data.
+        plot(): Creates and displays a plot from CSV data.
+        histogram(): Creates and displays a histogram from CSV data.
+        plot_and_histogram(): Creates and displays both a plot and histogram from CSV data.
+        print_all_users(): Retrieves and prints user data from an API.
+        print_all_posts(): Retrieves and prints post data from an API.
+        print_all_comments(): Retrieves and prints comment data from an API.
+        exit_program(): Exits the program.
+    """
+
     __calculator = Calculator()
 
     @staticmethod 

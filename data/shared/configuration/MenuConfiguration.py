@@ -2,8 +2,20 @@ from data.shared.classes.InputScanner import InputScanner
 from data.shared.classes.OutputPrinter import OutputPrinter
 from data.shared.configuration.MenuFunctions import MenuFunctions
 
-# Class which specifies how the Menu class instance should behave
 class MenuConfiguration:
+    """
+    A configuration class for the Menu class.
+
+    This class specifies the options, their corresponding functions, and descriptions for the menu, 
+    as well as the dependencies for input scanning and output printing.
+
+    Attributes:
+        options_and_functions (dict): A dictionary mapping menu options to their corresponding function calls.
+        options_and_descriptions (dict): A dictionary mapping menu options to their descriptions.
+        scanner: The InputScanner instance to be used for scanning user inputs.
+        printer: The OutputPrinter instance to be used for printing menu options and messages.
+    """
+
     options_and_functions = {
         '1': MenuFunctions.text_to_art_library,
         '2': MenuFunctions.display_fonts,

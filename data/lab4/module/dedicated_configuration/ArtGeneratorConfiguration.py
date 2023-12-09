@@ -1,4 +1,16 @@
 class ArtGeneratorConfiguration:
+    """
+    A configuration class for the ArtGenerator.
+
+    This class stores the necessary configurations for generating ASCII art, including the 
+    ASCII representations of letters and some configuration parameters.
+
+    Attributes:
+        letters_and_art (dict): A dictionary where each key is a lowercase letter or space, 
+            and the value is a list of strings representing the ASCII art of that letter.
+        elements_in_letter_array (int): The number of lines (elements) in each letter's ASCII art representation.
+        default_symbol (str): The default symbol used in the ASCII art representations.
+    """
     letters_and_art = {
         'a': ['   ##    ', '  ####   ', ' ##  ##  ', ' ######  ', ' ##  ##  ', ' ##  ##  ', ' ##  ##  '],
         'b': ['######   ', ' ##  ##  ', ' ##  ##  ', ' #####   ', ' ##  ##  ', ' ##  ##  ', '######   '],

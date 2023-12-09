@@ -1,5 +1,10 @@
 from abc import ABC
 
-# Abstact marker interface used to indicate that a particular class
-# clears console in one of its methods    
-class ClearsConsole(ABC): ...
+class ClearsConsole(ABC):
+    """
+    An abstract marker interface indicating that a class implements functionality to clear the console.
+
+    This interface serves as a contract to ensure that implementing classes provide a method to clear the console. 
+    It does not define any methods itself but is used to indicate that the implementing class has this capability.
+    """
+    pass

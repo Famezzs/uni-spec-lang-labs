@@ -1,9 +1,32 @@
-
 class FigureGenerator:
+    """
+    A class for generating the 2D isometric projection of a 3D parallelepiped using matplotlib.
+
+    This class uses numpy arrays to define the projection vectors for the 3D axes and matplotlib
+    to draw and color the parallelepiped.
+
+    Attributes:
+        x_axes_default_coefficient (float): Default coefficient for the x-axis in the isometric projection.
+        y_axes_default_coefficient (float): Default coefficient for the y-axis in the isometric projection.
+        x_vector (numpy.ndarray): The isometric projection vector for the x-axis.
+        y_vector (numpy.ndarray): The isometric projection vector for the y-axis.
+        z_vector (numpy.ndarray): The isometric projection vector for the z-axis.
+
+    Methods:
+        draw_parallelepiped(self, width, length, height, color='lightblue'): Draws a parallelepiped with the given dimensions and color.
+    """
+
     x_axes_default_coefficient = 0.5
     y_axes_default_coefficient = 0.5
 
     def __init__(self, x_axes_coefficient = x_axes_default_coefficient, y_axes_coefficient = y_axes_default_coefficient):
+        """
+        Initializes the FigureGenerator with specific coefficients for the axes.
+
+        Args:
+            x_axes_coefficient (float, optional): Coefficient for the x-axis in the isometric projection. Defaults to x_axes_default_coefficient.
+            y_axes_coefficient (float, optional): Coefficient for the y-axis in the isometric projection. Defaults to y_axes_default_coefficient.
+        """
         import numpy as np
         # Defining the 2D isometric projection vectors for 3D axes
         # The value of "1" on the first axis means it moves 1 unit to the right for every unit of width
@@ -59,6 +82,16 @@ class FigureGenerator:
                     [vertices[start][1], vertices[end][1]], 'k-')
 
     def draw_parallelepiped(self, width, length, height, color='lightblue'):
+        """
+        Draws a parallelepiped with the given dimensions and color. It calculates the 2D projections 
+        of the parallelepiped's vertices and uses matplotlib to draw and color it.
+
+        Args:
+            width (float): The width of the parallelepiped.
+            length (float): The length of the parallelepiped.
+            height (float): The height of the parallelepiped.
+            color (str, optional): The color to fill the parallelepiped. Defaults to 'lightblue'.
+        """
         import matplotlib.pyplot as plt
         # Calculate the 2D projections of the 8 vertices of the parallelepiped
         vertices = self.__calculate_parallelepiped_vertices(width, length, height)
