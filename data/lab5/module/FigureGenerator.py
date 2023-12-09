@@ -1,5 +1,6 @@
 __all__ = ['FigureGenerator']
 
+
 class FigureGenerator:
     """
     A class for generating the 2D isometric projection of a 3D parallelepiped using matplotlib.
@@ -15,7 +16,8 @@ class FigureGenerator:
         z_vector (numpy.ndarray): The isometric projection vector for the z-axis.
 
     Methods:
-        draw_parallelepiped(self, width, length, height, color='lightblue'): Draws a parallelepiped with the given dimensions and color.
+        draw_parallelepiped(self, width, length, height, color='lightblue'): Draws a parallelepiped with the given
+        dimensions and color.
     """
 
     x_axes_default_coefficient = 0.5
@@ -26,8 +28,10 @@ class FigureGenerator:
         Initializes the FigureGenerator with specific coefficients for the axes.
 
         Args:
-            x_axes_coefficient (float, optional): Coefficient for the x-axis in the isometric projection. Defaults to x_axes_default_coefficient.
-            y_axes_coefficient (float, optional): Coefficient for the y-axis in the isometric projection. Defaults to y_axes_default_coefficient.
+            x_axes_coefficient (float, optional): Coefficient for the x-axis in the isometric projection. Defaults to
+            x_axes_default_coefficient.
+            y_axes_coefficient (float, optional): Coefficient for the y-axis in the isometric projection. Defaults to
+            y_axes_default_coefficient.
         """
         import numpy as np
         # Defining the 2D isometric projection vectors for 3D axes

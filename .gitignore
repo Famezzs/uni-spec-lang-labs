@@ -1,6 +1,6 @@
 *__pycache__
 *.txt
-test.py
+*.csv
 logs/*
 *.vscode
 *.idea
