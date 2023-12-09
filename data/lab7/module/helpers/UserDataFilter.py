@@ -8,6 +8,7 @@ class UserDataFilter:
     Methods:
         filter(users: list): Filters a list of user data dictionaries based on specific fields.
     """
+
     @staticmethod
     def filter(users: list):
         """
@@ -26,7 +27,7 @@ class UserDataFilter:
             filtered_users.append({
                 'First Name': user['firstname'],
                 'Last Name': user['lastname'],
-                'Email':  user['email'],
+                'Email': user['email'],
                 'Birth Date': user['birthDate']
             })
         return filtered_users

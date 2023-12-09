@@ -1,6 +1,7 @@
 from data.shared.exception.NegativeScale import NegativeScale
 from data.shared.exception.FractionScale import FractionScale
 
+
 class ArtScaler:
     """
     A utility class for scaling ASCII art.

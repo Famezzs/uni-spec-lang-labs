@@ -1,5 +1,6 @@
 import art
 
+
 class ArtGenerator:
     """
     A class for generating ASCII art from text using the 'art' library.
@@ -30,7 +31,7 @@ class ArtGenerator:
             str: The ASCII art representation of the given text.
         """
         return art.text2art(text, font)
-    
+
     @staticmethod
     def get_fonts():
         """

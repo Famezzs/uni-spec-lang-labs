@@ -1,5 +1,6 @@
 from data.shared.classes.InputScanner import InputScanner
 
+
 class ArtGenerator:
     """
     A class for generating ASCII art from text based on a given configuration.
@@ -16,6 +17,7 @@ class ArtGenerator:
         text_to_art(self, text, character=''): Converts given text into ASCII art. Optionally replaces 
             the default symbol in ASCII art with a given character.
     """
+
     def __init__(self, configuration):
         """
         Initializes the ArtGenerator with a given configuration.
@@ -38,13 +40,13 @@ class ArtGenerator:
             for i in range(self.elements_in_letter_array):
                 art_array[i] += self.letters_and_art[letter][i] + ' '
         return art_array
-    
+
     def __art_array_to_string(self, art_array):
         result = ''
         for i in range(self.elements_in_letter_array):
             result += art_array[i] + '\n'
         return result
-    
+
     def __replace_character_in_art_string(self, art_string: str, character):
         """
         Replaces the default symbol in the ASCII art string with a given character.
@@ -60,7 +62,7 @@ class ArtGenerator:
             art_string = art_string.replace(self.default_symbol, character)
         return art_string
 
-    def text_to_art(self, text, character = ''):
+    def text_to_art(self, text, character=''):
         """
         Converts the given text into ASCII art. Optionally, a character can be specified to 
         replace the default symbol in the ASCII art.
@@ -73,6 +75,6 @@ class ArtGenerator:
         Returns:
             str: The ASCII art representation of the given text.
         """
-        art_array = self.__fill_in_art_array(self.__create_art_array(), text) 
+        art_array = self.__fill_in_art_array(self.__create_art_array(), text)
         art_string = self.__art_array_to_string(art_array)
         return self.__replace_character_in_art_string(art_string, character)

@@ -2,6 +2,7 @@ from data.shared.classes.InputScanner import InputScanner
 from data.shared.classes.OutputPrinter import OutputPrinter
 from data.shared.configuration.MenuFunctions import MenuFunctions
 
+
 class MenuConfiguration:
     """
     A configuration class for the Menu class.
@@ -20,7 +21,7 @@ class MenuConfiguration:
         '1': MenuFunctions.text_to_art_library,
         '2': MenuFunctions.display_fonts,
         '3': MenuFunctions.text_to_art_own,
-        '4': MenuFunctions.draw_figure, 
+        '4': MenuFunctions.draw_figure,
         '5': MenuFunctions.perform_calculation,
         '6': MenuFunctions.display_calculator_logs,
         '7': MenuFunctions.load_calculator_logs,

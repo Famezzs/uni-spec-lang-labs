@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module Calculator</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">Calculator</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A/users/user/desktop/uni/smp/data/shared/classes/calculator.py">c:/users/user/desktop/uni/smp/data/shared/classes/calculator.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="json.html">json</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+</td><td class="multicolumn"><a href="uuid.html">uuid</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="Calculator.html#Calculator">Calculator</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Calculator">class <strong>Calculator</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Calculator">Calculator</a>(logs_path='logs/calculator_logs.json')<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;to&nbsp;implement&nbsp;basic&nbsp;calculator&nbsp;functionality&nbsp;including&nbsp;operations&nbsp;like&nbsp;addition,&nbsp;<br>
+subtraction,&nbsp;multiplication,&nbsp;division,&nbsp;power,&nbsp;root,&nbsp;and&nbsp;modulo.&nbsp;It&nbsp;also&nbsp;handles&nbsp;logs&nbsp;<br>
+of&nbsp;calculations.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;logs_path&nbsp;(str):&nbsp;Path&nbsp;to&nbsp;the&nbsp;log&nbsp;file&nbsp;where&nbsp;the&nbsp;calculation&nbsp;logs&nbsp;are&nbsp;stored.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;logs&nbsp;(list):&nbsp;A&nbsp;list&nbsp;of&nbsp;dictionaries&nbsp;containing&nbsp;calculation&nbsp;logs.<br>
+&nbsp;<br>
+Methods:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-__init__">__init__</a>(self,&nbsp;logs_path='logs.json'):&nbsp;Initializes&nbsp;the&nbsp;calculator,&nbsp;setting&nbsp;up&nbsp;the&nbsp;logs&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-add">add</a>(self,&nbsp;augend,&nbsp;addend):&nbsp;Performs&nbsp;addition&nbsp;and&nbsp;returns&nbsp;the&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-subtract">subtract</a>(self,&nbsp;minuend,&nbsp;subtrahend):&nbsp;Performs&nbsp;subtraction&nbsp;and&nbsp;returns&nbsp;the&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-multiply">multiply</a>(self,&nbsp;multiplier,&nbsp;multiplicand):&nbsp;Performs&nbsp;multiplication&nbsp;and&nbsp;returns&nbsp;the&nbsp;result.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-divide">divide</a>(self,&nbsp;numerator,&nbsp;denominator):&nbsp;Performs&nbsp;division&nbsp;and&nbsp;returns&nbsp;the&nbsp;result,&nbsp;handles&nbsp;division&nbsp;by&nbsp;zero.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-power">power</a>(self,&nbsp;base,&nbsp;exponent):&nbsp;Returns&nbsp;the&nbsp;result&nbsp;of&nbsp;raising&nbsp;a&nbsp;number&nbsp;to&nbsp;a&nbsp;power.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-root">root</a>(self,&nbsp;radicand,&nbsp;degree):&nbsp;Returns&nbsp;the&nbsp;nth&nbsp;root&nbsp;of&nbsp;a&nbsp;number.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-modulo">modulo</a>(self,&nbsp;dividend,&nbsp;divisor):&nbsp;Returns&nbsp;the&nbsp;remainder&nbsp;of&nbsp;division.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-get_operator">get_operator</a>(self,&nbsp;valid_operators={'+',&nbsp;'-',&nbsp;'*',&nbsp;'/'}):&nbsp;Prompts&nbsp;the&nbsp;user&nbsp;to&nbsp;select&nbsp;an&nbsp;operator.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-get_operand">get_operand</a>(self):&nbsp;Prompts&nbsp;the&nbsp;user&nbsp;to&nbsp;enter&nbsp;a&nbsp;numeric&nbsp;value&nbsp;or&nbsp;use&nbsp;a&nbsp;value&nbsp;from&nbsp;logs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-get_operands">get_operands</a>(self,&nbsp;operator,&nbsp;operators_and_operand_names):&nbsp;Retrieves&nbsp;operands&nbsp;for&nbsp;a&nbsp;given&nbsp;operation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-perform_operation">perform_operation</a>(self,&nbsp;operator,&nbsp;operands):&nbsp;Performs&nbsp;the&nbsp;selected&nbsp;operation&nbsp;with&nbsp;provided&nbsp;operands.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-determine_continuation">determine_continuation</a>(self):&nbsp;Determines&nbsp;whether&nbsp;to&nbsp;continue&nbsp;with&nbsp;another&nbsp;calculation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-initialize_logs_file">initialize_logs_file</a>(self,&nbsp;logs_path='logs.json'):&nbsp;Initializes&nbsp;the&nbsp;logs&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-get_logs">get_logs</a>(self,&nbsp;logs_path='logs.json'):&nbsp;Retrieves&nbsp;logs&nbsp;from&nbsp;the&nbsp;specified&nbsp;path.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-append_logs">append_logs</a>(self,&nbsp;operands,&nbsp;operator,&nbsp;result,&nbsp;logs):&nbsp;Appends&nbsp;a&nbsp;new&nbsp;entry&nbsp;to&nbsp;the&nbsp;logs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-save_logs_file">save_logs_file</a>(self):&nbsp;Saves&nbsp;the&nbsp;current&nbsp;logs&nbsp;to&nbsp;the&nbsp;log&nbsp;file.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-perform_calculation">perform_calculation</a>(self):&nbsp;Main&nbsp;method&nbsp;to&nbsp;perform&nbsp;a&nbsp;calculation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-display_logs">display_logs</a>(self):&nbsp;Displays&nbsp;the&nbsp;calculation&nbsp;logs.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Calculator-load_logs">load_logs</a>(self):&nbsp;Loads&nbsp;calculation&nbsp;logs&nbsp;from&nbsp;a&nbsp;specified&nbsp;file&nbsp;path.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Calculator-__init__"><strong>__init__</strong></a>(self, logs_path='logs/calculator_logs.json')</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Calculator-add"><strong>add</strong></a>(self, augend, addend)</dt></dl>
+
+<dl><dt><a name="Calculator-append_logs"><strong>append_logs</strong></a>(self, operands, operator, result, logs)</dt></dl>
+
+<dl><dt><a name="Calculator-determine_continuation"><strong>determine_continuation</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Calculator-display_logs"><strong>display_logs</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Calculator-divide"><strong>divide</strong></a>(self, numerator, denominator)</dt></dl>
+
+<dl><dt><a name="Calculator-get_logs"><strong>get_logs</strong></a>(self, logs_path='logs.json')</dt></dl>
+
+<dl><dt><a name="Calculator-get_operand"><strong>get_operand</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Calculator-get_operands"><strong>get_operands</strong></a>(self, operator, operators_and_operand_names)</dt></dl>
+
+<dl><dt><a name="Calculator-get_operator"><strong>get_operator</strong></a>(self, valid_operators={'+', '*', '-', '/'})</dt></dl>
+
+<dl><dt><a name="Calculator-initialize_logs_file"><strong>initialize_logs_file</strong></a>(self, logs_path='logs.json')</dt></dl>
+
+<dl><dt><a name="Calculator-load_logs"><strong>load_logs</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Calculator-modulo"><strong>modulo</strong></a>(self, dividend, divisor)</dt></dl>
+
+<dl><dt><a name="Calculator-multiply"><strong>multiply</strong></a>(self, multiplier, multiplicand)</dt></dl>
+
+<dl><dt><a name="Calculator-perform_calculation"><strong>perform_calculation</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Calculator-perform_operation"><strong>perform_operation</strong></a>(self, operator, operands)</dt></dl>
+
+<dl><dt><a name="Calculator-power"><strong>power</strong></a>(self, base, exponent)</dt></dl>
+
+<dl><dt><a name="Calculator-root"><strong>root</strong></a>(self, radicand, degree)</dt></dl>
+
+<dl><dt><a name="Calculator-save_logs_file"><strong>save_logs_file</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Calculator-subtract"><strong>subtract</strong></a>(self, minuend, subtrahend)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>operators_and_functions</strong> = {'%': &lt;function Calculator.modulo&gt;, '*': &lt;function Calculator.multiply&gt;, '+': &lt;function Calculator.add&gt;, '-': &lt;function Calculator.subtract&gt;, '/': &lt;function Calculator.divide&gt;, '^': &lt;function Calculator.power&gt;, 'rt': &lt;function Calculator.root&gt;}</dl>
+
+<dl><dt><strong>operators_and_operand_names</strong> = {'%': ['dividend', 'divisor', 'dividend mod divisor'], '*': ['multiplier', 'multiplicand', 'multiplier * multiplicand'], '+': ['augend', 'addend', 'augend + addend'], '-': ['minuend', 'subtrahend', 'minuend - subtrahend'], '/': ['numerator', 'denominator', 'numerator / denominator'], '^': ['base', 'exponent', 'base ^ exponent'], 'rt': ['radicand', 'degree', 'radicand ^ (1 / degree)']}</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

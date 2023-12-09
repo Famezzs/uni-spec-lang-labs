@@ -2,6 +2,7 @@ from data.shared.classes.Menu import Menu
 from data.shared.exception.ExceptionHandler import ExceptionHandler
 from data.shared.configuration.Configuration import Configuration
 
+
 class Program:
     """
     The main class that implements the runtime program.
@@ -20,11 +21,11 @@ class Program:
         Continuously displays the menu, processes user selections, and handles any exceptions that occur.
         """
         menu = Menu(Configuration)
-        exceptionHandler = ExceptionHandler(Configuration)
+        exception_handler = ExceptionHandler(Configuration)
 
         while True:
             try:
                 menu.print_menu()
                 menu.scan_and_invoke_option()
             except Exception as exception:
-                exceptionHandler.handle(exception)
+                exception_handler.handle(exception)

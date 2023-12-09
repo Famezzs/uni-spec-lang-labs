@@ -3,6 +3,7 @@ from data.shared.abstract.ClearsConsole import ClearsConsole
 from termcolor import colored
 from tabulate import tabulate
 
+
 class OutputPrinter(ClearsConsole):
     """
     A class for handling various types of output printing in the application.
@@ -75,7 +76,7 @@ class OutputPrinter(ClearsConsole):
         print(colored(tabulate(data, headers="keys"), color))
         if additional_next_line:
             print()
-    
+
     @staticmethod
     def clear_console():
         """

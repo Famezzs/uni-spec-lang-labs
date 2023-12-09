@@ -1,5 +1,6 @@
 from data.shared.classes.Calculator import Calculator
 
+
 class MenuFunctions:
     """
     A class that stores the functions called by the Menu class instance.
@@ -28,7 +29,7 @@ class MenuFunctions:
 
     __calculator = Calculator()
 
-    @staticmethod 
+    @staticmethod
     def __read_csv_file():
         from data.shared.configuration.Configuration import Configuration
         from data.lab8.module.helpers.CSVFileReader import CSVFileReader
@@ -36,16 +37,16 @@ class MenuFunctions:
         return reader.read()
 
     @staticmethod
-    def __get_plot_values(allow_save_to_file = False):
+    def __get_plot_values(allow_save_to_file=False):
         from data.shared.classes.InputScanner import InputScanner
         from data.shared.classes.OutputPrinter import OutputPrinter
         from data.shared.configuration.Configuration import Configuration
         scanner = InputScanner(OutputPrinter)
-        
+
         plot_title = scanner.scan('Plot Title: ', True)
         if InputScanner.input_empty(plot_title):
             plot_title = Configuration.analysis_configuration.default_plot_title
-        
+
         x_plot_label = scanner.scan('X Plot Label: ', True)
         if InputScanner.input_empty(x_plot_label):
             x_plot_label = Configuration.analysis_configuration.default_x_plot_label
@@ -57,7 +58,7 @@ class MenuFunctions:
         y_plot_label = scanner.scan('Y Plot Label: ', True)
         if InputScanner.input_empty(y_plot_label):
             y_plot_label = Configuration.analysis_configuration.default_y_plot_label
-        
+
         y_plot_property = scanner.scan('Y Plot Property: ', True)
         if InputScanner.input_empty(y_plot_property):
             y_plot_property = Configuration.analysis_configuration.default_y_plot_property
@@ -79,7 +80,7 @@ class MenuFunctions:
         }
 
     @staticmethod
-    def __get_histogram_values(allow_save_to_file = False):
+    def __get_histogram_values(allow_save_to_file=False):
         from data.shared.classes.InputScanner import InputScanner
         from data.shared.classes.OutputPrinter import OutputPrinter
         from data.shared.configuration.Configuration import Configuration
@@ -88,7 +89,7 @@ class MenuFunctions:
         histogram_title = scanner.scan('Histogram Title: ', True)
         if InputScanner.input_empty(histogram_title):
             histogram_title = Configuration.analysis_configuration.default_histogram_title
-        
+
         x_histogram_label = scanner.scan('X Histogram Label: ', True)
         if InputScanner.input_empty(x_histogram_label):
             x_histogram_label = Configuration.analysis_configuration.default_x_histogram_label
@@ -96,7 +97,7 @@ class MenuFunctions:
         y_histogram_label = scanner.scan('Y Histogram Label: ', True)
         if InputScanner.input_empty(y_histogram_label):
             y_histogram_label = Configuration.analysis_configuration.default_y_histogram_label
-        
+
         histogram_property = scanner.scan('Histogram Property: ', True)
         if InputScanner.input_empty(histogram_property):
             histogram_property = Configuration.analysis_configuration.default_histogram_property
@@ -107,7 +108,7 @@ class MenuFunctions:
             option = scanner.scan('Export result? (Y/N): ', True)
             if option.lower().startswith('y'):
                 export_full_file_name = scanner.scan('Full file name: ')
-            
+
         return {
             'histogram_title': histogram_title,
             'x_histogram_label': x_histogram_label,
@@ -115,7 +116,7 @@ class MenuFunctions:
             'histogram_property': histogram_property,
             'export_full_file_name': export_full_file_name
         }
-    
+
     @staticmethod
     def text_to_art_library():
         from data.lab3.module.ArtGenerator import ArtGenerator
@@ -128,11 +129,11 @@ class MenuFunctions:
         color = scanner.scan('Color (leave blank for default): ', allow_empty=True)
 
         if InputScanner.input_empty(font) == True:
-            font = ArtGenerator.default_font    
+            font = ArtGenerator.default_font
 
         result = ArtGenerator.text_to_art(text=text, font=font)
         MenuFunctions.print_art(result, color)
-        
+
         option = scanner.scan('Scale art? (Y/N): ')
         if option.startswith('y'):
             result = MenuFunctions.scale_art(result)
@@ -151,12 +152,11 @@ class MenuFunctions:
         ArtPrinter.print(ArtGenerator.get_fonts())
         InputScanner.await_user_input()
 
-
     @staticmethod
     def print_art(result, color):
         from data.shared.classes.ArtPrinter import ArtPrinter
         from data.shared.classes.InputScanner import InputScanner
-        if InputScanner.input_empty(color) == True:
+        if InputScanner.input_empty(color):
             ArtPrinter.print(result)
         else:
             ArtPrinter.colored_print(result, color)
@@ -180,7 +180,7 @@ class MenuFunctions:
         scanner = InputScanner(OutputPrinter)
 
         multiplier = scanner.scan('Specify integer multiplier: ')
-        return ArtScaler.scale(int(multiplier), content)    
+        return ArtScaler.scale(int(multiplier), content)
 
     @staticmethod
     def text_to_art_own():
@@ -198,7 +198,7 @@ class MenuFunctions:
 
         result = art_generator.text_to_art(text, character)
         MenuFunctions.print_art(result, color)
-        
+
         option = scanner.scan('Scale art? (Y/N): ')
         if option.lower().startswith('y'):
             result = MenuFunctions.scale_art(result)
@@ -245,7 +245,7 @@ class MenuFunctions:
         from data.shared.classes.InputScanner import InputScanner
         MenuFunctions.__calculator.display_logs()
         InputScanner.await_user_input()
-    
+
     @staticmethod
     def load_calculator_logs():
         MenuFunctions.__calculator.load_logs()
@@ -256,7 +256,7 @@ class MenuFunctions:
         from data.lab8.module.helpers.CSVFileGenerator import CSVFileGenerator
         generator = CSVFileGenerator(Configuration)
         generator.generate()
-    
+
     @staticmethod
     def plot():
         from data.lab8.module.DataAnalyser import DataAnalyser
@@ -267,32 +267,32 @@ class MenuFunctions:
     def histogram():
         from data.lab8.module.DataAnalyser import DataAnalyser
         analyser = DataAnalyser(MenuFunctions.__read_csv_file())
-        analyser.histogram(MenuFunctions.__get_histogram_values(True))      
+        analyser.histogram(MenuFunctions.__get_histogram_values(True))
 
     @staticmethod
     def plot_and_histogram():
         from data.lab8.module.DataAnalyser import DataAnalyser
         analyser = DataAnalyser(MenuFunctions.__read_csv_file())
         analyser.plot_and_histogram(MenuFunctions.__get_plot_values(False), MenuFunctions.__get_histogram_values(False))
-        
+
     @staticmethod
     def __get_color_input():
         from data.shared.classes.InputScanner import InputScanner
         from data.shared.classes.OutputPrinter import OutputPrinter
         scanner = InputScanner(OutputPrinter)
         return scanner.scan('Color: ')
-    
+
     @staticmethod
-    def __save_output_as_file(data):
+    def __save_output_as_file(output):
         from data.lab7.module.helpers.SaveAsFile import SaveAsFile
         from data.shared.classes.InputScanner import InputScanner
         from data.shared.classes.OutputPrinter import OutputPrinter
         scanner = InputScanner(OutputPrinter)
-        option = scanner.scan('Save to file? (Y/N): ', True) 
+        option = scanner.scan('Save to file? (Y/N): ', True)
         if not option.startswith('y'):
             return
         from tabulate import tabulate
-        content = tabulate(data, headers="keys")
+        content = tabulate(output, headers="keys")
         full_file_name = scanner.scan('Full file name: ')
         SaveAsFile.save_as_file(content, full_file_name)
 
@@ -331,7 +331,7 @@ class MenuFunctions:
         filtered_comments = CommentDataFilter.filter(comments)
         OutputPrinter.print_as_colored_table(filtered_comments, MenuFunctions.__get_color_input(), True)
         MenuFunctions.__save_output_as_file(filtered_comments)
-    
+
     @staticmethod
     def exit_program():
         MenuFunctions.__calculator.save_logs_file()

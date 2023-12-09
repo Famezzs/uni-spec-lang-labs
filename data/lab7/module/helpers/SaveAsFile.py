@@ -8,6 +8,7 @@ class SaveAsFile:
     Methods:
         save_as_file(input_string, full_file_name: str): Saves the provided string to a file with the given file name.
     """
+
     @staticmethod
     def save_as_file(input_string, full_file_name: str):
         """

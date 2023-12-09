@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module FigureGenerator</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">FigureGenerator</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A/users/user/desktop/uni/smp/data/lab5/module/figuregenerator.py">c:/users/user/desktop/uni/smp/data/lab5/module/figuregenerator.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="FigureGenerator.html#FigureGenerator">FigureGenerator</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="FigureGenerator">class <strong>FigureGenerator</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#FigureGenerator">FigureGenerator</a>(x_axes_coefficient=0.5,&nbsp;y_axes_coefficient=0.5)<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;for&nbsp;generating&nbsp;the&nbsp;2D&nbsp;isometric&nbsp;projection&nbsp;of&nbsp;a&nbsp;3D&nbsp;parallelepiped&nbsp;using&nbsp;matplotlib.<br>
+&nbsp;<br>
+This&nbsp;class&nbsp;uses&nbsp;numpy&nbsp;arrays&nbsp;to&nbsp;define&nbsp;the&nbsp;projection&nbsp;vectors&nbsp;for&nbsp;the&nbsp;3D&nbsp;axes&nbsp;and&nbsp;matplotlib<br>
+to&nbsp;draw&nbsp;and&nbsp;color&nbsp;the&nbsp;parallelepiped.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_axes_default_coefficient&nbsp;(float):&nbsp;Default&nbsp;coefficient&nbsp;for&nbsp;the&nbsp;x-axis&nbsp;in&nbsp;the&nbsp;isometric&nbsp;projection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y_axes_default_coefficient&nbsp;(float):&nbsp;Default&nbsp;coefficient&nbsp;for&nbsp;the&nbsp;y-axis&nbsp;in&nbsp;the&nbsp;isometric&nbsp;projection.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_vector&nbsp;(numpy.ndarray):&nbsp;The&nbsp;isometric&nbsp;projection&nbsp;vector&nbsp;for&nbsp;the&nbsp;x-axis.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y_vector&nbsp;(numpy.ndarray):&nbsp;The&nbsp;isometric&nbsp;projection&nbsp;vector&nbsp;for&nbsp;the&nbsp;y-axis.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z_vector&nbsp;(numpy.ndarray):&nbsp;The&nbsp;isometric&nbsp;projection&nbsp;vector&nbsp;for&nbsp;the&nbsp;z-axis.<br>
+&nbsp;<br>
+Methods:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#FigureGenerator-draw_parallelepiped">draw_parallelepiped</a>(self,&nbsp;width,&nbsp;length,&nbsp;height,&nbsp;color='lightblue'):&nbsp;Draws&nbsp;a&nbsp;parallelepiped&nbsp;with&nbsp;the&nbsp;given&nbsp;dimensions&nbsp;and&nbsp;color.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="FigureGenerator-__init__"><strong>__init__</strong></a>(self, x_axes_coefficient=0.5, y_axes_coefficient=0.5)</dt><dd><span class="code">Initializes&nbsp;the&nbsp;<a href="#FigureGenerator">FigureGenerator</a>&nbsp;with&nbsp;specific&nbsp;coefficients&nbsp;for&nbsp;the&nbsp;axes.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_axes_coefficient&nbsp;(float,&nbsp;optional):&nbsp;Coefficient&nbsp;for&nbsp;the&nbsp;x-axis&nbsp;in&nbsp;the&nbsp;isometric&nbsp;projection.&nbsp;Defaults&nbsp;to&nbsp;x_axes_default_coefficient.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y_axes_coefficient&nbsp;(float,&nbsp;optional):&nbsp;Coefficient&nbsp;for&nbsp;the&nbsp;y-axis&nbsp;in&nbsp;the&nbsp;isometric&nbsp;projection.&nbsp;Defaults&nbsp;to&nbsp;y_axes_default_coefficient.</span></dd></dl>
+
+<dl><dt><a name="FigureGenerator-draw_parallelepiped"><strong>draw_parallelepiped</strong></a>(self, width, length, height, color='lightblue')</dt><dd><span class="code">Draws&nbsp;a&nbsp;parallelepiped&nbsp;with&nbsp;the&nbsp;given&nbsp;dimensions&nbsp;and&nbsp;color.&nbsp;It&nbsp;calculates&nbsp;the&nbsp;2D&nbsp;projections&nbsp;<br>
+of&nbsp;the&nbsp;parallelepiped's&nbsp;vertices&nbsp;and&nbsp;uses&nbsp;matplotlib&nbsp;to&nbsp;draw&nbsp;and&nbsp;color&nbsp;it.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width&nbsp;(float):&nbsp;The&nbsp;width&nbsp;of&nbsp;the&nbsp;parallelepiped.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;length&nbsp;(float):&nbsp;The&nbsp;length&nbsp;of&nbsp;the&nbsp;parallelepiped.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height&nbsp;(float):&nbsp;The&nbsp;height&nbsp;of&nbsp;the&nbsp;parallelepiped.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color&nbsp;(str,&nbsp;optional):&nbsp;The&nbsp;color&nbsp;to&nbsp;fill&nbsp;the&nbsp;parallelepiped.&nbsp;Defaults&nbsp;to&nbsp;'lightblue'.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>x_axes_default_coefficient</strong> = 0.5</dl>
+
+<dl><dt><strong>y_axes_default_coefficient</strong> = 0.5</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

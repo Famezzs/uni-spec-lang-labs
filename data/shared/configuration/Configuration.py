@@ -4,6 +4,7 @@ from data.lab4.module.dedicated_configuration.ArtGeneratorConfiguration import A
 from data.lab7.module.dedicated_configuration.APIConfiguration import APIConfiguration
 from data.lab8.module.dedicated_configuration.AnalysisConfiguration import AnalysisConfiguration
 
+
 class Configuration:
     """
     A class that stores the application's configurations.
@@ -19,7 +20,7 @@ class Configuration:
         analysis_configuration: Configuration for data analysis component.
         logger: Logger object for logging activities in the application.
     """
-    
+
     exception_handler_configuration = ExceptionHandlerConfiguration
     menu_configuration = MenuConfiguration
     art_generator_configuration = ArtGeneratorConfiguration

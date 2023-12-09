@@ -2,6 +2,7 @@ import os
 import json
 import uuid
 
+
 class Calculator:
     """
     A class to implement basic calculator functionality including operations like addition, 
@@ -34,7 +35,8 @@ class Calculator:
         display_logs(self): Displays the calculation logs.
         load_logs(self): Loads calculation logs from a specified file path.
     """
-    def __init__(self, logs_path = 'logs/calculator_logs.json'):
+
+    def __init__(self, logs_path='logs/calculator_logs.json'):
         self.logs_path = logs_path
         self.initialize_logs_file(self.logs_path)
         self.logs = self.get_logs(self.logs_path)
@@ -58,12 +60,12 @@ class Calculator:
         return pow(base, exponent)
 
     def root(self, radicand, degree):
-        return radicand**(1/degree)
+        return radicand ** (1 / degree)
 
     def modulo(self, dividend, divisor):
         return dividend % divisor
 
-    def get_operator(self, valid_operators = {'+', '-', '*', '/'}):
+    def get_operator(self, valid_operators={'+', '-', '*', '/'}):
         operator = input('Select one operator ("+", or "-", or "*", or "/", or "^", or "rt", or "%"): ')
         if operator in valid_operators:
             return operator
@@ -98,7 +100,7 @@ class Calculator:
                     else:
                         print('Value retrieved:', desired_log['result'])
                         return desired_log['result']
-                
+
                 case '_':
                     print('Wrong option. Please try again')
 
@@ -118,13 +120,13 @@ class Calculator:
             return True
         return False
 
-    def initialize_logs_file(self, logs_path = 'logs.json'):
+    def initialize_logs_file(self, logs_path='logs.json'):
         if os.path.isfile(logs_path) == False:
             logs_file = open(logs_path, 'w')
             logs_file.write('[]')
             logs_file.close()
 
-    def get_logs(self, logs_path = 'logs.json'):
+    def get_logs(self, logs_path='logs.json'):
         logs_file = open(logs_path)
         logs_string = logs_file.read()
         logs_file.close()
@@ -148,21 +150,21 @@ class Calculator:
         '/': divide,
         '^': power,
         'rt': root,
-        '%': modulo   
+        '%': modulo
     }
 
     operators_and_operand_names = {
-        '+':  ['augend', 'addend', 'augend + addend'],
-        '-':  ['minuend', 'subtrahend', 'minuend - subtrahend'],
-        '*':  ['multiplier', 'multiplicand', 'multiplier * multiplicand'],
-        '/':  ['numerator', 'denominator', 'numerator / denominator'],
-        '^':  ['base', 'exponent', 'base ^ exponent'],
+        '+': ['augend', 'addend', 'augend + addend'],
+        '-': ['minuend', 'subtrahend', 'minuend - subtrahend'],
+        '*': ['multiplier', 'multiplicand', 'multiplier * multiplicand'],
+        '/': ['numerator', 'denominator', 'numerator / denominator'],
+        '^': ['base', 'exponent', 'base ^ exponent'],
         'rt': ['radicand', 'degree', 'radicand ^ (1 / degree)'],
-        '%':  ['dividend', 'divisor', 'dividend mod divisor']
+        '%': ['dividend', 'divisor', 'dividend mod divisor']
     }
 
     def perform_calculation(self):
-        continue_calculation = True 
+        continue_calculation = True
         while continue_calculation == True:
             operator = self.get_operator(list(self.operators_and_functions.keys()))
             operands = self.get_operands(operator, self.operators_and_operand_names)
@@ -175,7 +177,8 @@ class Calculator:
         print('\n\nLogs:')
         for log in self.logs:
             print('id:', log['id'])
-            print('expression:', log['operands'][0], log['operator'], log['operands'][1], '=', log['result'], end='\n\n')
+            print('expression:', log['operands'][0], log['operator'], log['operands'][1], '=', log['result'],
+                  end='\n\n')
 
     def load_logs(self):
         path = input('Specify path to logs file: ')

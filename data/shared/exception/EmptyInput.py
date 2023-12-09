@@ -8,5 +8,5 @@ class EmptyInput(Exception):
     Inherits from:
         Exception: Base class for exceptions in Python.
     """
-    
+
     pass

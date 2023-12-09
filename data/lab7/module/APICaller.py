@@ -1,5 +1,6 @@
 import requests
 
+
 class APICaller:
     """
     A class to handle API calls for retrieving data from specific endpoints.
@@ -30,7 +31,7 @@ class APICaller:
         self.users_url = configuration.api_configuration.users_url
         self.posts_url = configuration.api_configuration.posts_url
         self.comments_url = configuration.api_configuration.comments_url
-    
+
     def get_all_users(self):
         """
         Makes a GET request to the users URL to retrieve all user data.
@@ -39,7 +40,7 @@ class APICaller:
             list: A list of dictionaries, each representing a user.
         """
         return requests.get(self.users_url).json()
-    
+
     def get_all_posts(self):
         """
         Makes a GET request to the posts URL to retrieve all post data.
@@ -48,7 +49,7 @@ class APICaller:
             list: A list of dictionaries, each representing a post.
         """
         return requests.get(self.posts_url).json()
-    
+
     def get_all_comments(self):
         """
         Makes a GET request to the comments URL to retrieve all comment data.

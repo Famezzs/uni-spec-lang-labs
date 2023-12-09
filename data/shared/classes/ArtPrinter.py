@@ -1,6 +1,7 @@
 from data.shared.exception.InvalidColor import InvalidColor
 from termcolor import colored
 
+
 class ArtPrinter:
     """
     A utility class for printing ASCII art.
@@ -24,7 +25,7 @@ class ArtPrinter:
         print()
         print(output_string)
         print()
-    
+
     @staticmethod
     def colored_print(output_string, color):
         """

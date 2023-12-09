@@ -1,5 +1,6 @@
 from abc import ABC
 
+
 class ClearsConsole(ABC):
     """
     An abstract marker interface indicating that a class implements functionality to clear the console.

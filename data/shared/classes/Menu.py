@@ -1,6 +1,7 @@
 from data.shared.abstract.ClearsConsole import ClearsConsole
 from data.shared.exception.InvalidOption import InvalidOption
 
+
 class Menu(ClearsConsole):
     """
     A class for rendering and managing the application's menu.
@@ -69,7 +70,7 @@ class Menu(ClearsConsole):
         if not self.option_present(option):
             self.__handle_not_present_option()
         self.options_and_functions[option]()
-    
+
     def print_menu(self):
         """
         Prints the menu options to the console.

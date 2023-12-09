@@ -1,6 +1,7 @@
 import unittest
 from data.shared.classes.Calculator import Calculator
 
+
 class CalculatorTests(unittest.TestCase):
     """
     A test suite for testing the Calculator class.
@@ -102,7 +103,7 @@ class CalculatorTests(unittest.TestCase):
         actual = self.calculator.multiply(multiplier, multiplicand)
 
         self.assertEqual(expected, actual)
-    
+
     def test_positive_division_result(self):
         numerator = 5
         denominator = 10.5
@@ -138,6 +139,7 @@ class CalculatorTests(unittest.TestCase):
 
         with self.assertRaises(Exception):
             self.calculator.divide(numerator, denominator)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,6 +1,7 @@
 import logging
 from datetime import datetime
 
+
 class Logger:
     """
     A class for logging messages to a file.
@@ -25,7 +26,8 @@ class Logger:
         self.logs_file_path = logs_file_path
         logging.basicConfig(filename=self.logs_file_path, encoding='utf-8', level=logging.WARNING)
 
-    def log_warning(self, message: str):
+    @staticmethod
+    def log_warning(message: str):
         """
         Logs a warning message to the file, including a timestamp.
 

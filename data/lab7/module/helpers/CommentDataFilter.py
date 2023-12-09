@@ -8,6 +8,7 @@ class CommentDataFilter:
     Methods:
         filter(comments: list): Takes a list of comment dictionaries and returns a filtered version of this list.
     """
+
     @staticmethod
     def filter(comments: list):
         """

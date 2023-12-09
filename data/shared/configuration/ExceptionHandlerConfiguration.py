@@ -1,6 +1,7 @@
 from data.shared.classes.InputScanner import InputScanner
 from data.shared.classes.OutputPrinter import OutputPrinter
 
+
 class ExceptionHandlerConfiguration:
     """
     A configuration class for the ExceptionHandler class.

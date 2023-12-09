@@ -2,6 +2,7 @@ import unittest
 from module.APICaller import APICaller
 from data.shared.configuration.Configuration import Configuration
 
+
 class APICallerTests(unittest.TestCase):
     """
     A test suite for testing the APICaller class.
@@ -25,7 +26,7 @@ class APICallerTests(unittest.TestCase):
         api_caller = APICaller(Configuration)
         users = api_caller.get_all_users()
         self.assertIsNotNone(users)
-    
+
     def test_get_all_users_returns_nonempty_result(self):
         """
         Tests that the get_all_users method of APICaller returns a non-empty result.
@@ -57,7 +58,7 @@ class APICallerTests(unittest.TestCase):
         api_caller = APICaller(Configuration)
         comments = api_caller.get_all_comments()
         self.assertIsNotNone(comments)
-    
+
     def test_get_all_comments_returns_nonempty_result(self):
         """
         Tests that the get_all_comments method of APICaller returns a non-empty result.
@@ -65,6 +66,7 @@ class APICallerTests(unittest.TestCase):
         api_caller = APICaller(Configuration)
         comments = api_caller.get_all_comments()
         self.assertTrue(comments)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -19,7 +19,7 @@ class FigureGenerator:
     x_axes_default_coefficient = 0.5
     y_axes_default_coefficient = 0.5
 
-    def __init__(self, x_axes_coefficient = x_axes_default_coefficient, y_axes_coefficient = y_axes_default_coefficient):
+    def __init__(self, x_axes_coefficient=x_axes_default_coefficient, y_axes_coefficient=y_axes_default_coefficient):
         """
         Initializes the FigureGenerator with specific coefficients for the axes.
 
@@ -48,13 +48,15 @@ class FigureGenerator:
             self.y_vector * length + self.z_vector * height,
             self.x_vector * width + self.y_vector * length + self.z_vector * height
         ]
-    
-    def __name_points(self, axes, vertices):
+
+    @staticmethod
+    def __name_points(axes, vertices):
         for i, v in enumerate(vertices):
             axes.plot(v[0], v[1], 'o')
             axes.text(v[0], v[1], f'P{i}', fontsize=12, verticalalignment='bottom')
 
-    def __color_parallelepiped_projection(self, axes, vertices, color):
+    @staticmethod
+    def __color_parallelepiped_projection(axes, vertices, color):
         # Coloring the sides (quadrilaterals)
         # Bottom
         axes.fill(*zip(*[vertices[0], vertices[1], vertices[3], vertices[2]]), color)
@@ -69,7 +71,8 @@ class FigureGenerator:
         # Right
         axes.fill(*zip(*[vertices[1], vertices[3], vertices[7], vertices[5]]), color)
 
-    def __connect_parallelepiped_points(self, axes, vertices):
+    @staticmethod
+    def __connect_parallelepiped_points(axes, vertices):
         # Connect vertices to draw the edges of the parallelepiped
         connections = [
             (0, 1), (0, 2), (1, 3), (2, 3),
@@ -78,8 +81,8 @@ class FigureGenerator:
         ]
 
         for start, end in connections:
-            axes.plot([vertices[start][0], vertices[end][0]], 
-                    [vertices[start][1], vertices[end][1]], 'k-')
+            axes.plot([vertices[start][0], vertices[end][0]],
+                      [vertices[start][1], vertices[end][1]], 'k-')
 
     def draw_parallelepiped(self, width, length, height, color='lightblue'):
         """
@@ -95,19 +98,19 @@ class FigureGenerator:
         import matplotlib.pyplot as plt
         # Calculate the 2D projections of the 8 vertices of the parallelepiped
         vertices = self.__calculate_parallelepiped_vertices(width, length, height)
-        
+
         # Plot the vertices and edges
         _, axes = plt.subplots()
 
         # Name points of parallelepiped
         self.__name_points(axes, vertices)
-        
+
         # Color sides of parallelepiped
         self.__color_parallelepiped_projection(axes, vertices, color)
-        
+
         # Connect points of parallelepiped
         self.__connect_parallelepiped_points(axes, vertices)
-        
+
         axes.set_aspect('equal', 'box')
         axes.axis('off')
         plt.show()

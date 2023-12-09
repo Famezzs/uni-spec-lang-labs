@@ -1,5 +1,6 @@
 from data.shared.exception.EmptyInput import EmptyInput
 
+
 class InputScanner:
     """
     A class for handling user input in the application.
@@ -54,7 +55,7 @@ class InputScanner:
             self.__handle_empty_input()
 
         return input_string
-        
+
     @staticmethod
     def input_empty(input_string):
         """
@@ -67,7 +68,7 @@ class InputScanner:
             bool: True if the input string is empty or contains only whitespace, False otherwise.
         """
         return input_string == "" or input_string.isspace()
-    
+
     @staticmethod
     def await_user_input():
         """

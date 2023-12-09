@@ -8,6 +8,7 @@ class PostDataFilter:
     Methods:
         filter(posts: list): Takes a list of post dictionaries and returns a filtered version of this list.
     """
+
     @staticmethod
     def filter(posts: list):
         """
@@ -30,7 +31,7 @@ class PostDataFilter:
             filtered_posts.append({
                 'Title': post['title'][0:17] + '...',
                 'Category': post['category'],
-                'Status':  post['status'],
+                'Status': post['status'],
                 'Publish Date': post['publishedAt']
             })
         return filtered_posts
