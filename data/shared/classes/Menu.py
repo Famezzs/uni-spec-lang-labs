@@ -1,3 +1,4 @@
+__all__ = ['Menu']
 from data.shared.abstract.ClearsConsole import ClearsConsole
 from data.shared.exception.InvalidOption import InvalidOption
 

@@ -1,3 +1,4 @@
+__all__ = ['InputScanner']
 from data.shared.exception.EmptyInput import EmptyInput
 
 

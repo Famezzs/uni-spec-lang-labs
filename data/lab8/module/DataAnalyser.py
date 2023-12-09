@@ -1,3 +1,5 @@
+__all__ = ['DataAnalyser']
+
 class DataAnalyser:
     """
     A class for analyzing and visualizing data using plots and histograms.

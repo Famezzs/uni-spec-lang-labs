@@ -1,3 +1,4 @@
+__all__ = ['APICaller']
 import requests
 
 

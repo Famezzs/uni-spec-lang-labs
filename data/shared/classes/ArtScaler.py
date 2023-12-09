@@ -1,3 +1,4 @@
+__all__ = ['ArtScaler']
 from data.shared.exception.NegativeScale import NegativeScale
 from data.shared.exception.FractionScale import FractionScale
 

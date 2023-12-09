@@ -1,3 +1,4 @@
+__all__ = ['ArtPrinter']
 from data.shared.exception.InvalidColor import InvalidColor
 from termcolor import colored
 

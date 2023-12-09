@@ -1,3 +1,5 @@
+__all__ = ['CSVFileGenerator']
+
 class CSVFileGenerator:
     """
     A class for generating a CSV file with simulated data for analysis.

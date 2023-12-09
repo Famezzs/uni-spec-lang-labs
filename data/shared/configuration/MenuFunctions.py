@@ -1,3 +1,4 @@
+__all__ = ['MenuFunctions']
 from data.shared.classes.Calculator import Calculator
 
 
@@ -119,7 +120,7 @@ class MenuFunctions:
 
     @staticmethod
     def text_to_art_library():
-        from data.lab3.module.ArtGenerator import ArtGenerator
+        from data.lab3.module.ArtGeneratorExternalLibrary import ArtGenerator
         from data.shared.classes.InputScanner import InputScanner
         from data.shared.classes.OutputPrinter import OutputPrinter
         scanner = InputScanner(OutputPrinter)
@@ -145,7 +146,7 @@ class MenuFunctions:
 
     @staticmethod
     def display_fonts():
-        from data.lab3.module.ArtGenerator import ArtGenerator
+        from data.lab3.module.ArtGeneratorExternalLibrary import ArtGenerator
         from data.shared.classes.ArtPrinter import ArtPrinter
         from data.shared.classes.InputScanner import InputScanner
         print('Available fonts:')
@@ -184,7 +185,7 @@ class MenuFunctions:
 
     @staticmethod
     def text_to_art_own():
-        from data.lab4.module.ArtGenerator import ArtGenerator
+        from data.lab4.module.ArtGeneratorOwnImplementation import ArtGenerator
         from data.shared.classes.InputScanner import InputScanner
         from data.shared.classes.OutputPrinter import OutputPrinter
         from data.shared.configuration.Configuration import Configuration

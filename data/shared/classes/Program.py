@@ -1,3 +1,4 @@
+__all__ = ['Program']
 from data.shared.classes.Menu import Menu
 from data.shared.exception.ExceptionHandler import ExceptionHandler
 from data.shared.configuration.Configuration import Configuration

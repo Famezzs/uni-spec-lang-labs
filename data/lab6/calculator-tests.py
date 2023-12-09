@@ -1,3 +1,4 @@
+__all__ = ['CalculatorTests']
 import unittest
 from data.shared.classes.Calculator import Calculator
 

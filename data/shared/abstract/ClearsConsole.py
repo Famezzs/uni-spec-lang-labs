@@ -1,3 +1,4 @@
+__all__ = ['ClearsConsole']
 from abc import ABC
 
 

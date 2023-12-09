@@ -1,3 +1,4 @@
+__all__ = ['Calculator']
 import os
 import json
 import uuid

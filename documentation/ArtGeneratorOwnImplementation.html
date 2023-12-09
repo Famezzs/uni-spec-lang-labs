@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ArtGeneratorOwnImplementation</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">ArtGeneratorOwnImplementation</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A/users/user/desktop/uni/smp/data/lab4/module/artgeneratorownimplementation.py">c:/users/user/desktop/uni/smp/data/lab4/module/artgeneratorownimplementation.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="ArtGeneratorOwnImplementation.html#ArtGenerator">ArtGenerator</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ArtGenerator">class <strong>ArtGenerator</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ArtGenerator">ArtGenerator</a>(configuration)<br>
+&nbsp;<br>
+A&nbsp;class&nbsp;for&nbsp;generating&nbsp;ASCII&nbsp;art&nbsp;from&nbsp;text&nbsp;based&nbsp;on&nbsp;a&nbsp;given&nbsp;configuration.<br>
+&nbsp;<br>
+The&nbsp;class&nbsp;uses&nbsp;a&nbsp;configuration&nbsp;<a href="builtins.html#object">object</a>&nbsp;to&nbsp;set&nbsp;up&nbsp;various&nbsp;properties&nbsp;related&nbsp;to&nbsp;art&nbsp;generation&nbsp;<br>
+and&nbsp;provides&nbsp;a&nbsp;method&nbsp;to&nbsp;convert&nbsp;text&nbsp;to&nbsp;ASCII&nbsp;art.<br>
+&nbsp;<br>
+Attributes:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;letters_and_art&nbsp;(dict):&nbsp;A&nbsp;dictionary&nbsp;mapping&nbsp;characters&nbsp;to&nbsp;their&nbsp;ASCII&nbsp;art&nbsp;representation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;elements_in_letter_array&nbsp;(int):&nbsp;Number&nbsp;of&nbsp;elements&nbsp;(lines)&nbsp;in&nbsp;each&nbsp;ASCII&nbsp;art&nbsp;representation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default_symbol&nbsp;(str):&nbsp;The&nbsp;default&nbsp;symbol&nbsp;used&nbsp;in&nbsp;ASCII&nbsp;art&nbsp;representations.<br>
+&nbsp;<br>
+Methods:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ArtGenerator-text_to_art">text_to_art</a>(self,&nbsp;text,&nbsp;character=''):&nbsp;Converts&nbsp;given&nbsp;text&nbsp;into&nbsp;ASCII&nbsp;art.&nbsp;Optionally&nbsp;replaces&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;default&nbsp;symbol&nbsp;in&nbsp;ASCII&nbsp;art&nbsp;with&nbsp;a&nbsp;given&nbsp;character.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="ArtGenerator-__init__"><strong>__init__</strong></a>(self, configuration)</dt><dd><span class="code">Initializes&nbsp;the&nbsp;<a href="#ArtGenerator">ArtGenerator</a>&nbsp;with&nbsp;a&nbsp;given&nbsp;configuration.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;configuration:&nbsp;An&nbsp;<a href="builtins.html#object">object</a>&nbsp;containing&nbsp;configuration&nbsp;settings&nbsp;for&nbsp;the&nbsp;art&nbsp;generator.</span></dd></dl>
+
+<dl><dt><a name="ArtGenerator-text_to_art"><strong>text_to_art</strong></a>(self, text, character='')</dt><dd><span class="code">Converts&nbsp;the&nbsp;given&nbsp;text&nbsp;into&nbsp;ASCII&nbsp;art.&nbsp;Optionally,&nbsp;a&nbsp;character&nbsp;can&nbsp;be&nbsp;specified&nbsp;to&nbsp;<br>
+replace&nbsp;the&nbsp;default&nbsp;symbol&nbsp;in&nbsp;the&nbsp;ASCII&nbsp;art.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text&nbsp;(str):&nbsp;The&nbsp;text&nbsp;to&nbsp;be&nbsp;converted&nbsp;into&nbsp;ASCII&nbsp;art.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;character&nbsp;(str,&nbsp;optional):&nbsp;The&nbsp;character&nbsp;to&nbsp;replace&nbsp;the&nbsp;default&nbsp;symbol&nbsp;in&nbsp;ASCII&nbsp;art.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;an&nbsp;empty&nbsp;string,&nbsp;which&nbsp;means&nbsp;no&nbsp;replacement.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;The&nbsp;ASCII&nbsp;art&nbsp;representation&nbsp;of&nbsp;the&nbsp;given&nbsp;text.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>__all__</strong> = ['ArtGenerator']</td></tr></table>
+</body></html>

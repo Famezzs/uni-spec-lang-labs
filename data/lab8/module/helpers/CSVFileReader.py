@@ -1,3 +1,5 @@
+__all__ = ['CSVFileReader']
+
 class CSVFileReader:
     """
     A class for reading data from a CSV file.

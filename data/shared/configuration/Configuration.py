@@ -1,3 +1,4 @@
+__all__ = ['Configuration']
 from data.shared.configuration.ExceptionHandlerConfiguration import ExceptionHandlerConfiguration
 from data.shared.configuration.MenuConfiguration import MenuConfiguration
 from data.lab4.module.dedicated_configuration.ArtGeneratorConfiguration import ArtGeneratorConfiguration

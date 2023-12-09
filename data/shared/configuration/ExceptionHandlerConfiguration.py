@@ -1,3 +1,4 @@
+__all__ = ['ExceptionHandlerConfiguration']
 from data.shared.classes.InputScanner import InputScanner
 from data.shared.classes.OutputPrinter import OutputPrinter
 

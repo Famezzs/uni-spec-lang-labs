@@ -1,3 +1,4 @@
+__all__ = ['ArtGeneratorConfiguration']
 class ArtGeneratorConfiguration:
     """
     A configuration class for the ArtGenerator.

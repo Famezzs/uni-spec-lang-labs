@@ -1,3 +1,5 @@
+__all__ = ['FigureGenerator']
+
 class FigureGenerator:
     """
     A class for generating the 2D isometric projection of a 3D parallelepiped using matplotlib.

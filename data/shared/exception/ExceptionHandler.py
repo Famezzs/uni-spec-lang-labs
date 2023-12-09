@@ -1,4 +1,3 @@
-# Class which is used for exception handling
 class ExceptionHandler:
     """
     A class for handling exceptions within the application.

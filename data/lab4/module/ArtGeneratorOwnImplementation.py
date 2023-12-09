@@ -1,3 +1,4 @@
+__all__ = ['ArtGenerator']
 from data.shared.classes.InputScanner import InputScanner
 
 

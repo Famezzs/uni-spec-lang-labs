@@ -1,5 +1,6 @@
+__all__ = ['APICallerTests']
 import unittest
-from module.APICaller import APICaller
+from data.lab7.module.APICaller import APICaller
 from data.shared.configuration.Configuration import Configuration
 
 

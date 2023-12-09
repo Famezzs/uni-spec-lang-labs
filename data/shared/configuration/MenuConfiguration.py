@@ -1,3 +1,4 @@
+__all__ = ['MenuConfiguration']
 from data.shared.classes.InputScanner import InputScanner
 from data.shared.classes.OutputPrinter import OutputPrinter
 from data.shared.configuration.MenuFunctions import MenuFunctions

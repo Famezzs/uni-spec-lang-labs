@@ -1,3 +1,4 @@
+__all__ = ['OutputPrinter']
 import os
 from data.shared.abstract.ClearsConsole import ClearsConsole
 from termcolor import colored
